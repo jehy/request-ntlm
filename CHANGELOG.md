@@ -1,3 +1,7 @@
+# 0.2.0
+
+* Remove extra deps, refactor
+
 # 0.1.5
 
 * Add support for PATCH verb. 
