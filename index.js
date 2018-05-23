@@ -2,7 +2,8 @@
 
 const request = require('request');
 const ntlm    = require('./lib/ntlm');
-const KeepAlive = require('agentkeepalive');
+const http = require('http');
+const https = require('https');
 
 function makeRequest(method, options, params, callback, pipeTarget) {
 
@@ -10,12 +11,14 @@ function makeRequest(method, options, params, callback, pipeTarget) {
     callback(new Error('Please use "ntlm_domain" instead of "domain" in options'));
     return;
   }
-  let Agent = KeepAlive;
+  let keepaliveAgent = new http.Agent({
+    keepAlive: true,
+  });
   if (options.url.toLowerCase().indexOf('https://') === 0) {
-    Agent = KeepAlive.HttpsAgent;
+    keepaliveAgent = new https.Agent({
+      keepAlive: true,
+    });
   }
-
-  const keepaliveAgent = new Agent();
 
   if (!options.workstation) options.workstation = '';
   if (!options.ntlm_domain) options.ntlm_domain = '';
@@ -67,7 +70,13 @@ function makeRequest(method, options, params, callback, pipeTarget) {
       request(options, callback2);
     }
   }
-  startAuth((err, response, body) => requestComplete(response, body, callback));
+  startAuth((err, response, body) => {
+    if (err) {
+      callback(err, response, body);
+      return;
+    }
+    requestComplete(response, body, callback);
+  });
 }
 
 module.exports = {
