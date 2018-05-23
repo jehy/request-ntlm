@@ -1,6 +1,6 @@
 {
   "name": "request-ntlm-lite",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "NTLM auth for NodeJS - continued from Colyn Brown's project",
   "main": "index.js",
   "repository": "https://github.com/jehy/request-ntlm-lite",
