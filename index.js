@@ -1,3 +1,5 @@
+'use strict';
+
 const request = require('request');
 const ntlm    = require('./lib/ntlm');
 const KeepAlive = require('agentkeepalive');
