@@ -6,6 +6,10 @@ const KeepAlive = require('agentkeepalive');
 
 function makeRequest(method, options, params, callback, pipeTarget) {
 
+  if (options.domain) {
+    callback(new Error('Please use "ntlm_domain" instead of "domain" in options'));
+    return;
+  }
   let Agent = KeepAlive;
   if (options.url.toLowerCase().indexOf('https://') === 0) {
     Agent = KeepAlive.HttpsAgent;

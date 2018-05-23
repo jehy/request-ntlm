@@ -4,19 +4,18 @@ const should = require('should');
 const request = require('../index.js');
 const http = require('http');
 
+function simpleGetRequest(options) {
+  return (callback)=>{
+    request.get(options, undefined, (err, res, body) => {
+      should.not.exist(err);
+      should.exist(res);
+      should.exist(body);
+      callback();
+    });
+  };
+}
+
 describe('request-ntlm-lite', function () {
-
-  function simpleGetRequest(options) {
-    return (callback)=>{
-      request.get(options, undefined, (err, res, body) => {
-        should.not.exist(err);
-        should.exist(res);
-        should.exist(body);
-        callback();
-      });
-    };
-  }
-
   this.timeout(10000);
 
   describe('NTLM requests', () => {
@@ -72,6 +71,27 @@ describe('request-ntlm-lite', function () {
       options.ntlm = {strict: true};
       request.get(options, undefined, (err) => {
         should.exist(err);
+        done();
+      });
+    });
+  });
+
+
+  describe('Common', () => {
+
+    const options = {
+      username: 'username',
+      password: 'password',
+      domain: 'yourdomain',
+      workstation: 'workstation',
+      url: 'https://www.google.com/search?q=ntlm',
+      strictSSL: false,
+    };
+
+    it('should throw error when "domain" used instead of "ntlm_domain"', (done) => {
+      request.get(options, undefined, (err, res, body) => {
+        should.exist(err);
+        should.equal(err.message, 'Please use "ntlm_domain" instead of "domain" in options');
         done();
       });
     });
