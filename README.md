@@ -1,21 +1,21 @@
-# Request-NTLM-Light
+# Request-NTLM-lite
 
-[![Build Status](https://travis-ci.org/jehy/request-ntlm-light.svg?branch=master)](https://travis-ci.org/jehy/request-ntlm-light)
-[![dependencies Status](https://david-dm.org/jehy/request-ntlm-light/status.svg)](https://david-dm.org/jehy/request-ntlm-light)
-[![devDependencies Status](https://david-dm.org/jehy/request-ntlm-light/dev-status.svg)](https://david-dm.org/jehy/request-ntlm-light?type=dev)
+[![Build Status](https://travis-ci.org/jehy/request-ntlm-lite.svg?branch=master)](https://travis-ci.org/jehy/request-ntlm-lite)
+[![dependencies Status](https://david-dm.org/jehy/request-ntlm-lite/status.svg)](https://david-dm.org/jehy/request-ntlm-lite)
+[![devDependencies Status](https://david-dm.org/jehy/request-ntlm-lite/dev-status.svg)](https://david-dm.org/jehy/request-ntlm-lite?type=dev)
 
 Module for authenticating with NTLM; An ntlm authentication wrapper for the Request module.
 
 ## Install with NPM
 
 ```
-$ npm install --save-dev request-ntlm-light
+$ npm install --save-dev request-ntlm-lite
 ```
 
 ## Usage
 
 ```javascript
-var ntlm = require('request-ntlm-light');
+var ntlm = require('request-ntlm-lite');
 
 var opts = {
   username: 'username',
