@@ -1,6 +1,6 @@
 {
   "name": "request-ntlm-lite",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "NTLM auth for NodeJS - continued from Colyn Brown's project",
   "main": "index.js",
   "repository": "https://github.com/jehy/request-ntlm-lite",
@@ -40,14 +40,14 @@
   ],
   "license": "ISC",
   "dependencies": {
-    "request": "^2.34.0"
+    "request": "^2.87.0"
   },
   "devDependencies": {
     "coveralls": "^3.0.1",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "~2.12.0",
-    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^3.1.0",
     "istanbul": "^0.4.5",
     "mocha": "^5.2.0",

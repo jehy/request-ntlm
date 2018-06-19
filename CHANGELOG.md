@@ -1,3 +1,7 @@
+# 0.2.3
+
+* Fix error without callback
+
 # 0.2.2
 
 * Remove agentkeepalive from dependencies

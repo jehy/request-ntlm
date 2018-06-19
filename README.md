@@ -4,7 +4,8 @@
 [![dependencies Status](https://david-dm.org/jehy/request-ntlm-lite/status.svg)](https://david-dm.org/jehy/request-ntlm-lite)
 [![devDependencies Status](https://david-dm.org/jehy/request-ntlm-lite/dev-status.svg)](https://david-dm.org/jehy/request-ntlm-lite?type=dev)
 
-Module for authenticating with NTLM; An ntlm authentication wrapper for the Request module.
+An ntlm authentication wrapper for the Request module, fork of
+([request-ntlm-continued](https://www.npmjs.com/package/request-ntlm-continued)).
 
 ## Install with NPM
 
@@ -38,7 +39,8 @@ Requests can also be streamed:
 ntlm.get(opts, json, null, fs.createWriteStream('example.pdf'));
 ```
 
-## Changes from original ([request-ntlm-continued](https://www.npmjs.com/package/request-ntlm-continued)):
+## Changes from original
 
 * Less dependencies
 * Refactor
+* Fix errors

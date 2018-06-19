@@ -49,7 +49,16 @@ function makeRequest(method, options, params, callback, pipeTarget) {
       return;
     }
 
-    const type2msg = ntlm.parseType2Message(res.headers['www-authenticate']);
+    let type2msg;
+    try
+    {
+      type2msg = ntlm.parseType2Message(res.headers['www-authenticate']);
+    }
+    catch(err)
+    {
+      callback2(err);
+      return;
+    }
     const type3msg = ntlm.createType3Message(type2msg, options);
     options.method = method;
     Object.assign(options.headers, {
