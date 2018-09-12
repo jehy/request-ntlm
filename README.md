@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/jehy/request-ntlm-lite.svg?branch=master)](https://travis-ci.org/jehy/request-ntlm-lite)
 [![dependencies Status](https://david-dm.org/jehy/request-ntlm-lite/status.svg)](https://david-dm.org/jehy/request-ntlm-lite)
 [![devDependencies Status](https://david-dm.org/jehy/request-ntlm-lite/dev-status.svg)](https://david-dm.org/jehy/request-ntlm-lite?type=dev)
+[![Known Vulnerabilities](https://snyk.io/test/github/jehy/request-ntlm-lite/badge.svg)](https://snyk.io/test/github/jehy/request-ntlm-lite)
 
 An ntlm authentication wrapper for the Request module, fork of
 ([request-ntlm-continued](https://www.npmjs.com/package/request-ntlm-continued)).

@@ -1,3 +1,7 @@
+# 0.2.4
+
+* Bump deps
+
 # 0.2.3
 
 * Fix error without callback
